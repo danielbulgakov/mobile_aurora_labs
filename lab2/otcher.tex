@@ -1,0 +1,169 @@
+% Параметры компиляции
+
+\documentclass[a4document]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[unicode, pdftex]{hyperref}
+
+
+
+
+\thispagestyle{empty} 
+
+\usepackage[14pt]{extsizes}
+\usepackage[left=2cm,right=2cm,
+    top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\begin{document}
+
+% Титульный лист
+{
+\centering{
+Министерство образования и науки Российской Федерации \\
+Федеральное государственное автономное образовательное \\
+учреждение высшего профессионального образования \\
+«Национальный исследовательский Нижегородский государственный университет им. Н.И. Лобачевского»\\
+Институт информационных технологий, математики и механики \\
+\bigbreak
+\bigbreak
+\bigbreak
+Кафедра Математического обеспечения и суперкомпьютерных технологий \\
+Направление подготовки "Программная инженерия"
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\bigbreak
+\textbf{Отчет по лабораторной работе №2 \\
+"Кликер"}
+
+
+
+\bigbreak
+\bigbreak
+}
+
+\begin{flushright}
+    \textbf{Выполнил: } \\
+    студент группы 382008-1 \\
+    Булгаков Д.Э. \\
+    \bigbreak
+    \textbf{Руководитель: }  \\ 
+    доцент кафедры программной \\
+    инженерии \\
+    Борисов Н.А.
+    
+\end{flushright}
+
+\vspace*{\fill}
+
+\begin{center}
+Нижний Новгород \\
+2023 г.
+\end{center}
+}
+
+
+
+% Оглавление
+{
+\newpage
+\begin{flushleft}
+\tableofcontents
+\end{flushleft}
+}
+
+% -0-
+{
+\newpage
+\section{Цель.}
+\par 
+Научиться использовать основные объекты qml.
+
+}
+
+% -0-
+{
+\newpage
+\section{Постановка задачи.} 
+\par 
+\begin{enumerate}
+    \item Добавить объект кнопки.
+    \item Добавить текстовое поле с счетчиком. 
+    \item При нажатии на кнопку значение в текстовом поле увеличивается на единицу.
+    \item Собрать на эмуляторе и протестировать.
+\end{enumerate}
+
+}
+
+% -0-
+{
+\newpage
+\section{Руководство пользователя.} 
+\par 
+Начальный экран приложения выглядит следующим образом (рис. 1)
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{resources/1.png}
+    \caption{Начальный экран.}
+    \label{fig:pk1}
+\end{figure} 
+
+\par \noindent
+При нажатии на кнопку значение в текстовом поле увеличивается на единицу (рис. 2)
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{resources/2.png}
+    \caption{После нажатия.}
+    \label{fig:pk2}
+\end{figure}
+
+}
+
+% -0-
+{
+\newpage
+\section{Приложение.} 
+\par {MainPage.qml}
+\begin{verbatim} 
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+
+Page {
+    objectName: "mainPage"
+    allowedOrientations: Orientation.All
+    PageHeader {
+        id : pheader
+        objectName: "pageHeader"
+        title: qsTr("ЛАБА")
+
+    }
+    Column {
+        id : clmn
+        width: parent.width
+
+        anchors.top : pheader.bottom
+        property int counter: 0
+
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: clmn.counter
+        }
+
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "нАжМи МеНя"
+            onClicked: clmn.counter++
+        }
+    }
+}
+\end{verbatim}
+
+}
+
+
+\end{document}
