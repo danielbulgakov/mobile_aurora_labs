@@ -25,4 +25,11 @@
         android:onClick="onTask2"
         android:text="Задание 2" />
 
+    <Button
+        android:id="@+id/btn_task4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onTask4"
+        android:text="Задание 4" />
+
 </LinearLayout>

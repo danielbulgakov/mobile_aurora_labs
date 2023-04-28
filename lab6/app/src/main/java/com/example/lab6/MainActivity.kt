@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.lab6.Activities.MoneyActivity
+import com.example.lab6.Activities.RectangleListActivity
+import com.example.lab6.Activities.RectangleRemoveActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +21,12 @@ class MainActivity : AppCompatActivity() {
 
     fun onTask2(view: View) {
         Intent(this, RectangleRemoveActivity::class.java).also { intent ->
+            startActivity(intent)
+        }
+    }
+
+    fun onTask4(view: View) {
+        Intent(this, MoneyActivity::class.java).also { intent ->
             startActivity(intent)
         }
     }

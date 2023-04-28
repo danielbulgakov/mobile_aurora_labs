@@ -1,12 +1,13 @@
-package com.example.lab6
+package com.example.lab6.Activities
 
-import android.content.ClipData.Item
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lab6.Adapters.RectangleRemoveAdapter
+import com.example.lab6.R
 import com.example.lab6.SimpleRecyclerList.ItemRectangle
 import com.example.lab6.SimpleRecyclerList.RectangleListBuilder
 
