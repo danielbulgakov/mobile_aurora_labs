@@ -17,4 +17,12 @@
         android:onClick="onTask1And3"
         android:text="Задание 1,3" />
 
+    <Button
+        android:id="@+id/btn_task_2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="76dp"
+        android:onClick="onTask2"
+        android:text="Задание 2" />
+
 </LinearLayout>

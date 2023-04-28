@@ -15,4 +15,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    fun onTask2(view: View) {
+        Intent(this, RectangleRemoveActivity::class.java).also { intent ->
+            startActivity(intent)
+        }
+    }
 }
