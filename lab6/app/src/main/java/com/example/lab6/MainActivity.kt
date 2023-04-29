@@ -4,12 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lab6.Activities.MoneyActivity
-import com.example.lab6.Activities.MoneyReqActivity
-import com.example.lab6.Activities.RectangleListActivity
-import com.example.lab6.Activities.RectangleRemoveActivity
+import com.example.lab6.Activities.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,6 +32,12 @@ class MainActivity : AppCompatActivity() {
 
     fun onTask5(view: View) {
         Intent(this, MoneyReqActivity::class.java).also { intent ->
+            startActivity(intent)
+        }
+    }
+
+    fun onTask6(view: View) {
+        Intent(this, DataBaseActivity::class.java).also { intent ->
             startActivity(intent)
         }
     }

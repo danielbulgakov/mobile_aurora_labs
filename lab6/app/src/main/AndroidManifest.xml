@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.DataBaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.MoneyReqActivity"
             android:exported="false" />
         <activity

@@ -12,15 +12,17 @@
     <Button
         android:id="@+id/btn_task_1_3"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="56dp"
         android:layout_marginTop="100dp"
+        android:height="56dp"
         android:onClick="onTask1And3"
         android:text="Задание 1,3" />
 
     <Button
         android:id="@+id/btn_task_2"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="56dp"
+        android:height="56dp"
         android:onClick="onTask2"
         android:text="Задание 2" />
 
@@ -28,6 +30,7 @@
         android:id="@+id/btn_task_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:height="56dp"
         android:onClick="onTask4"
         android:text="Задание 4" />
 
@@ -35,7 +38,16 @@
         android:id="@+id/btn_task_5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:height="56dp"
         android:onClick="onTask5"
         android:text="Задание 5" />
+
+    <Button
+        android:id="@+id/btn_task_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onTask6"
+        android:text="задание 6"
+        android:height="56dp" />
 
 </LinearLayout>
