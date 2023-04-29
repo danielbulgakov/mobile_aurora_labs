@@ -3,7 +3,6 @@ package com.example.lab6.Activities
 import android.graphics.Color
 import android.os.Bundle
 import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
 import android.util.Xml
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -16,15 +15,18 @@ import com.example.lab6.R
 import com.example.lab6.SimpleRecyclerList.ItemRectangle
 import com.example.lab6.SimpleRecyclerList.RectangleListBuilder
 import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import org.xmlpull.v1.XmlPullParser
 import java.io.IOException
 import java.io.InputStream
-import java.net.URL
 import java.text.NumberFormat
 import java.util.*
 
-// Simple XMLHttpRequest
-class MoneyActivity : AppCompatActivity() {
+// Request using external lib OkHttpClient
+
+class MoneyReqActivity : AppCompatActivity() {
+
 
     private val link : String = "http://www.cbr.ru/scripts/XML_daily.asp"
     private val list = RectangleListBuilder.build()
@@ -33,7 +35,7 @@ class MoneyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_money)
 
-        val policy = ThreadPolicy.Builder().permitAll().build()
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
         list.getList().clear()
@@ -53,11 +55,21 @@ class MoneyActivity : AppCompatActivity() {
     }
 
     private fun parseResponse(url : String) {
+
+        val client = OkHttpClient()
+
+        val request = Request.Builder()
+            .url(url)
+            .get()
+            .build()
+
+        val response = client.newCall(request).execute()
+
         val parser = Xml.newPullParser()
         var stream: InputStream? = null
         val nf: NumberFormat = NumberFormat.getInstance(Locale.FRANCE)
+        stream = response.body!!.byteStream()
         try {
-            stream = URL(url).openConnection().getInputStream()
             parser.setInput(stream, null)
             var eventType = parser.eventType
             var done = false
@@ -89,9 +101,12 @@ class MoneyActivity : AppCompatActivity() {
                                 ignoreCase = true
                             ) && item != null
                         ) {
-                            list.addRectangle(ItemRectangle(Color.BLACK, Color.WHITE,
+                            list.addRectangle(
+                                ItemRectangle(
+                                    Color.BLACK, Color.WHITE,
                                 "${item.name} \n ${item.currency}"
-                            ))
+                            )
+                            )
                         } else if (name.contains(
                                 "ValCurs",
                                 ignoreCase = true
