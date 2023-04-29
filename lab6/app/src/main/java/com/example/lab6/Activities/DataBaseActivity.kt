@@ -43,11 +43,13 @@ class DataBaseActivity : AppCompatActivity() {
 
     fun onAdd(view: View) {
         val text = findViewById<EditText>(R.id.editTextInput).text.toString()
+        findViewById<EditText>(R.id.editTextInput).setText("")
         db!!.taskDAO().insertAll(EntityTask(text))
         rlist.getList().clear()
         db!!.taskDAO().getAll().forEach {
             rlist.addRectangle(ItemRectangle(Color.BLACK, Color.WHITE, it.taskTitle.toString()))
         }
+
         adapter.notifyDataSetChanged()
     }
 }

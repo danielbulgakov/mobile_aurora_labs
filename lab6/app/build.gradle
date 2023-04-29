@@ -51,6 +51,12 @@ dependencies {
     //=================== Http lib support ==========================
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     //===============================================================
+
+    //=================== Store App Settings ========================
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
+    //===============================================================
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
     implementation 'androidx.core:core-ktx:1.7.0'
