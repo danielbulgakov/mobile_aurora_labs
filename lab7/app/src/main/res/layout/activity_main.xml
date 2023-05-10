@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_tlight"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:onClick="onTrafficLightClicked"
+        android:text="Светофор" />
+
+    <Button
+        android:id="@+id/btn_text"
+        android:layout_width="320dp"
+        android:onClick="onTextClicked"
+        android:layout_height="wrap_content"
+        android:text="Текст" />
+
+    <Button
+        android:id="@+id/btn_stopwatch"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:onClick="onStopWatch"
+        android:text="Таймер" />
+</LinearLayout>

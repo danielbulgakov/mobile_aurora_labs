@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         val store = SettingsStorage(applicationContext)
 
         lifecycleScope.launch {
+            println(store.getState())
+            println(store.getString())
             findViewById<TextView>(R.id.editText2).text = store.getString()
             findViewById<Switch>(R.id.switch1).isChecked = store.getState()
         }

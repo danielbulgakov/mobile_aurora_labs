@@ -67,6 +67,7 @@
 
     <Switch
         android:id="@+id/switch2"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="Переключатель"
@@ -74,6 +75,7 @@
 
     <EditText
         android:id="@+id/editText2"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
