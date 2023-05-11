@@ -28,4 +28,17 @@
         android:layout_height="wrap_content"
         android:onClick="onStopWatch"
         android:text="Таймер" />
+
+    <Button
+        android:id="@+id/btn_custom_container"
+        android:layout_width="322dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCustomContainer"
+        android:text="Контейнер" />
+
+    <TextView
+        android:id="@+id/textStackView"
+        android:layout_width="318dp"
+        android:layout_height="47dp"
+        android:text="Текст" />
 </LinearLayout>

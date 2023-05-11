@@ -18,6 +18,7 @@ class TextActivity : AppCompatActivity() {
         setContentView(R.layout.activity_text)
 
         val text = findViewById<TextView>(R.id.textView)
+        text.setTextColor(Color.BLACK)
 
         val animatorSet = AnimatorSet()
 
@@ -30,7 +31,7 @@ class TextActivity : AppCompatActivity() {
                 rotation.duration = 1000
 
                 val colorAnim: ObjectAnimator =
-                    ObjectAnimator.ofInt(text, "textColor",Color.WHITE, Color.RED)
+                    ObjectAnimator.ofInt(text, "textColor",Color.BLACK, Color.RED)
                 colorAnim.setEvaluator(ArgbEvaluator())
                 colorAnim.duration = 1000
 

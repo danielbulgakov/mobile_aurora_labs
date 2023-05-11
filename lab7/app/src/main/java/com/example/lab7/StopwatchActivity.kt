@@ -51,12 +51,16 @@ class StopwatchActivity : AppCompatActivity() {
         )
     }
 
-    fun onStart(view: View) {runStopwatch();}
-    fun onStop(view: View) {isRunning = false;}
+    fun onStart(view: View) {
+        runStopwatch()
+    }
+    fun onStop(view: View) {
+        isRunning = false
+    }
     fun onReset(view: View) {
-        isRunning = false;
-        elapsedTime = 0;
-        textView.setText(formatTime(elapsedTime));
+        isRunning = false
+        elapsedTime = 0
+        textView.setText(formatTime(elapsedTime))
     }
 
 }
