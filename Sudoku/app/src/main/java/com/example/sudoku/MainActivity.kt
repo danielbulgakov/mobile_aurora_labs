@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private val paths = arrayOf("Легко", "Средне", "Сложно (Experimental)")
 
+    private lateinit var diff : Difficulty
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,12 +34,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        GlobalScope.launch {
-            when (p2) {
-                0 -> {SudokuFieldBuilder.rebuild(Difficulty.EASY)}
-                1 -> {SudokuFieldBuilder.rebuild(Difficulty.MIDDLE)}
-                2 -> {SudokuFieldBuilder.rebuild(Difficulty.HARD)}
-            }
+        when (p2) {
+            0 -> {diff = Difficulty.EASY}
+            1 -> {diff = Difficulty.MIDDLE}
+            2 -> {diff = Difficulty.HARD}
         }
     }
 
@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     fun onGameStart(view: View) {
+        SudokuFieldBuilder.rebuild(diff)
         Intent(this, GameFieldActivity::class.java).also { intent ->
             startActivity(intent)
         }

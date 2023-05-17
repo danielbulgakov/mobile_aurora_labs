@@ -4,9 +4,10 @@ import kotlin.random.Random
 
 class SudokuFieldGenerator {
     companion object {
-        private val grid = Array(9) { IntArray(9) {0} }
+        private var grid = Array(9) { IntArray(9) {0} }
 
         fun generate() : Array<IntArray> {
+            grid = Array(9) { IntArray(9) {0} }
             fillDiagonalBoxes()
             fillRemaining(0, 3)
             return grid

@@ -10,7 +10,11 @@ class SudokuFieldCellRemover {
         fun remove(sudokuGrid : Array<IntArray>, diff : Difficulty) :
             Array<IntArray>
         {
-            var grid = sudokuGrid.clone()
+            var grid = Array(sudokuGrid.size) { row ->
+                IntArray(sudokuGrid[row].size) { col ->
+                    sudokuGrid[row][col]
+                }
+            }
             var digitsToRemove = 9 * 9 - diff.numberOfGivenCells
 
             while (digitsToRemove > 0) {
